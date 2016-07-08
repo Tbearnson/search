@@ -1,0 +1,16 @@
+{
+  "name": "Swift",
+  "version": "1.0.0",
+  "size": {
+    "width": 2,
+    "height": 2
+  },
+  "mapping": [
+    {
+      "dataSetId": "8168c841-d844-49a5-8da4-e977c6422a29",
+      "alias": "artist",
+      "fields": []
+    }
+  ],
+  "id": "ecd5931e-12be-4144-a8f3-d0ed810b441c"
+}
