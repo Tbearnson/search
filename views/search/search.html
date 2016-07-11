@@ -1,1 +1,46 @@
-<button ui-sref="artist_detail">GO TO ARTIST DETAIL PAGE</button>
+<div class="main-search text-center">
+	<div class="main-search-icon search">
+		<i class="fa fa-search" aria-hidden="true" ng-click="sc.goToDetail()"></i>
+	</div>
+
+	<input type="text" class="main-search-input" placeholder="Search..." ng-model="sc.search_text">
+
+	<div class="main-search-icon clear">
+		<i class="fa fa-times-circle" aria-hidden="true" ng-click="sc.search_text = ''"></i>
+	</div>
+</div>
+
+<div class="main-search-overlay" ng-class="{show: sc.search_text.length > 0}" stop-propagation>
+	<div class="result-section result-1" ng-class="{show: sc.search_text.length > 0}">
+		<h2 ng-click="sc.log()">Artists</h2>
+		<div class="results">
+			<div class="result" ng-repeat="tile in sc.tiles">
+				{{sc.search_text}}
+			</div>
+		</div>
+	</div>
+
+	<div class="result-section result-2" ng-class="{show: sc.search_text.length > 0}">
+		<h2>Albums</h2>
+		<div class="results">
+			<div class="result" ng-repeat="tile in sc.tiles">
+				{{sc.search_text}}
+			</div>
+		</div>
+	</div>
+
+	<div class="result-section result-3" ng-class="{show: sc.search_text.length > 0}">
+		<h2>Songs</h2>
+		<div class="results">
+			<div class="result" ng-repeat="tile in sc.tiles">
+				{{sc.search_text}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="text-center main-content">
+	<div class="tile"ng-repeat="i in sc.tiles track by $index">
+		<img class="album-cover" ng-src="{{sc.images[$index % 3]}}">
+	</div>
+</div>
