@@ -1,5 +1,11 @@
-// fetch data
-domo.get('/data/v1/artist')
-    .then(function(artist){
-      console.log("artist", artist);
-    });
+(function(app) {
+	function Config($urlRouterProvider) {
+		$urlRouterProvider.otherwise('/');
+	}
+
+
+	app
+	.config(['$urlRouterProvider', Config])
+	.constant('domo', domo)
+	;
+})(angular.module('swift',['ui.router','ui.bootstrap']));

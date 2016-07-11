@@ -1,12 +1,26 @@
 <html>
   <head>
-    <link rel="stylesheet" href="app.css" />
-    <script src="domo.js"></script>
-    <script src="app.js"></script>
-  </head>
-  <body>
-    <h1>Swift</h1>
-    <!-- domo.js optional utils -->
+	<!-- VENDOR STYLESHEETS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 
+  	<!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="views/search/search.css" />
+    <link rel="stylesheet" href="views/artist_detail/artist_detail.css" />
+
+    <!-- VENDOR SCRIPTS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/domo.js"></script>
+
+    <!-- CUSTOM SCRIPTS -->
+    <script src="app.js"></script>
+    <script src="views/search/search.js"></script>
+    <script src="views/artist_detail/artist_detail.js"></script>
+  </head>
+  
+  <body ng-app="swift">
+  	<ui-view></ui-view>
   </body>
 </html>

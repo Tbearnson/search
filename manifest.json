@@ -5,6 +5,7 @@
     "width": 2,
     "height": 2
   },
+  "fullpage": true,
   "mapping": [
     {
       "dataSetId": "8168c841-d844-49a5-8da4-e977c6422a29",
