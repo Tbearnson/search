@@ -1,0 +1,72 @@
+.img-circle {
+	border-radius: 50%;
+	float: left;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.artist{
+	font-family: open sans;
+	font-size: 48px !important;
+	font-weight: 200 !important;
+	color: white;
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+  	padding-left: 100px;
+}
+
+
+.navbar{
+	margin-bottom: 0px !important;
+
+}
+
+
+#bg, #search-bg {
+  background-image: url('https://i.scdn.co/image/32e13d2c37af4817d1cbf09742c1f51a328820c7');
+  background-size: 1080px auto;
+}
+
+#bg {
+  background-position: center top;
+  height: 200px;
+  /*padding: 30px 30px 30px 30px;*/
+}
+
+#search-container {
+  position: relative;
+  height: 200px;
+}
+
+#search-bg {
+  /* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 99;
+height: 200px;
+  /* Pull the background 70px higher to the same place as #bg's */
+  background-position: center -70px;
+
+  -webkit-filter: blur(5px);
+  filter: url('/media/blur.svg#blur');
+  filter: blur(5px);
+}
+
+#search {
+  /* Put this on top of the blurred layer */
+  position: relative;
+  z-index: 100;
+  padding: 20px;
+  background: rgb(34,34,34); /* for IE */
+  background: rgba(34,34,34,0.75);
+  height: 200px;
+}
+
+
+
+
