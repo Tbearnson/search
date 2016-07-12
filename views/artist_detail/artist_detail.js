@@ -6,7 +6,8 @@
 			templateUrl: 'views/artist_detail/artist_detail.html',
 			controller: 'ArtistDetailController as adc',
 			params: {
-				artist_id: ''
+				artist_id: '',
+				artist_name: ''
 			}
 		});
 	}

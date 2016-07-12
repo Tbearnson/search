@@ -19,6 +19,10 @@
         {
           "alias": "artist_name",
           "columnName": "canopus_artist_name"
+        },
+        {
+          "alias": "canopus_id",
+          "columnName": "canopus_id"
         }
       ]
     }
