@@ -8,7 +8,7 @@
 		});
 	}
 
-	function SearchController($state) {
+	function SearchController($state, SearchData) {
 		var sc = this;
 
 		sc.tiles = _.range(25);
@@ -21,12 +21,16 @@
 	function SearchData(domo) {
 		var TheSearchData = {};
 
-		// Some methods for fetching data to cache / retrieving data from cache here
-		// domo.get('/data/v1/artist')
-		//     .then(function(artist){
-		//       console.log("artist", artist);
-		//     });
+		function getSearchData() {
+			console.log('beetles');
+			domo.get('/data/v1/artists?groupby=artist_name')
+			.then(function(artists_data){
+				TheSearchData.artists = artists_data;
+				console.log("artists", artists_data);
+			});
+		}
 
+		getSearchData();
 		return TheSearchData;
 	}
 
@@ -43,8 +47,8 @@
 
 	app
 	.config(['$stateProvider', SearchConfig])
-	.controller('SearchController', ['$state', SearchController])
-	.factory(['domo', SearchData])
+	.controller('SearchController', ['$state', 'SearchData', SearchController])
+	.factory('SearchData', ['domo', SearchData])
 	.directive('stopPropagation', [stopPropagation])
 	;
 })(angular.module('swift'));
