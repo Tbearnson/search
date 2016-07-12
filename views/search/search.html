@@ -1,9 +1,9 @@
 <div class="main-search text-center">
 	<div class="main-search-icon search">
-		<i class="fa fa-search" aria-hidden="true" ng-click="sc.goToDetail()"></i>
+		<i class="fa fa-search" aria-hidden="true"></i>
 	</div>
 
-	<input type="text" class="main-search-input" placeholder="Search..." ng-model="sc.search_text">
+	<input type="text" class="main-search-input" placeholder="Search..." ng-model="sc.search_text" ng-change="sc.getSearchResults()">
 
 	<div class="main-search-icon clear">
 		<i class="fa fa-times-circle" aria-hidden="true" ng-click="sc.search_text = ''"></i>
@@ -12,29 +12,32 @@
 
 <div class="main-search-overlay" ng-class="{show: sc.search_text.length > 0}" stop-propagation>
 	<div class="result-section result-1" ng-class="{show: sc.search_text.length > 0}">
-		<h2 ng-click="sc.log()">Artists</h2>
+		<h2>Artists</h2>
 		<div class="results">
-			<div class="result" ng-repeat="tile in sc.tiles">
-				{{sc.search_text}}
+			<div class="result" ng-repeat="artist in sc.artists" ng-click="sc.goToDetail(artist)">
+				<h3><a href="">{{artist}}</a></h3>
 			</div>
+			<div class="loader" ng-if="sc.loading.artists"></div>
 		</div>
 	</div>
 
 	<div class="result-section result-2" ng-class="{show: sc.search_text.length > 0}">
 		<h2>Albums</h2>
 		<div class="results">
-			<div class="result" ng-repeat="tile in sc.tiles">
-				{{sc.search_text}}
-			</div>
+			<!-- <div class="result" ng-repeat="artist in sc.artists">
+				{{artist}}
+			</div> -->
+			<div class="loader" ng-if="sc.loading.albums"></div>
 		</div>
 	</div>
 
 	<div class="result-section result-3" ng-class="{show: sc.search_text.length > 0}">
 		<h2>Songs</h2>
 		<div class="results">
-			<div class="result" ng-repeat="tile in sc.tiles">
-				{{sc.search_text}}
-			</div>
+			<!-- <div class="result" ng-repeat="artist in sc.artists">
+				{{artist}}
+			</div> -->
+			<div class="loader" ng-if="sc.loading.songs"></div>
 		</div>
 	</div>
 </div>

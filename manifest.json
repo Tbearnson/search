@@ -11,6 +11,20 @@
       "dataSetId": "8168c841-d844-49a5-8da4-e977c6422a29",
       "alias": "artist",
       "fields": []
+    },
+    {
+      "dataSetId": "34c20869-9ed8-4df3-9565-2dc90e399fa6",
+      "alias": "artists",
+      "fields": [
+        {
+          "alias": "artist_name",
+          "columnName": "canopus_artist_name"
+        },
+        {
+          "alias": "canopus_id",
+          "columnName": "canopus_id"
+        }
+      ]
     }
   ],
   "id": "9d2f64fd-600f-476c-917e-04214ae6c5d5"
