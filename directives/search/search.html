@@ -18,6 +18,7 @@
 				<h3><a href="">{{artist.artist_name}}</a></h3>
 			</div>
 			<div class="loader" ng-if="sc.loading.artists"></div>
+			<h4 class="no-results" ng-if="!sc.loading.artists && sc.artists.length === 0">(No results found)</h4>
 		</div>
 	</div>
 
@@ -34,10 +35,12 @@
 	<div class="result-section result-3" ng-class="{show: sc.search_text.length > 0}">
 		<h2>Songs</h2>
 		<div class="results">
-			<!-- <div class="result" ng-repeat="artist in sc.artists">
-				{{artist}}
-			</div> -->
+			<div class="result song-result" ng-repeat="song in sc.songs">
+				<h3>"{{song.resource_title}}"</h3>
+				<h5>by {{song.canopus_artist_name}}</h5>
+			</div>
 			<div class="loader" ng-if="sc.loading.songs"></div>
+			<h4 class="no-results" ng-if="!sc.loading.songs && sc.songs.length === 0">(No results found)</h4>
 		</div>
 	</div>
 </div>

@@ -8,11 +8,6 @@
   "fullpage": true,
   "mapping": [
     {
-      "dataSetId": "99ebd0a9-2a89-4487-98b2-a46ecdcb4578",
-      "alias": "artist_details",
-      "fields": [{"columnName":"canopus_id", "alias":"canopus_id"},{"columnName":"territory", "alias":"territory"},{"columnName":"resource_id", "alias":"resource_id"},{"columnName":"report_date", "alias":"report_date"},{"columnName":"resource_rollup_id", "alias":"resource_rollup_id"},{"columnName":"isrc", "alias":"isrc"},{"columnName":"frame_start_timestamp", "alias":"frame_start_timestamp"},{"columnName":"frame_end_timestamp", "alias":"frame_end_timestamp"},{"columnName":"canopus_artist_name", "alias":"canopus_artist_name"},{"columnName":"resource_title", "alias":"resource_title"},{"columnName":"resource_display_title", "alias":"resource_display_title"},{"columnName":"streams_total", "alias":"streams_total"},{"columnName":"streams_free", "alias":"streams_free"},{"columnName":"streams_paid", "alias":"streams_paid"},{"columnName":"streams_total_rank", "alias":"streams_total_rank"},{"columnName":"cluster01_streams", "alias":"cluster01_streams"},{"columnName":"cluster02_streams", "alias":"cluster02_streams"},{"columnName":"cluster03_streams", "alias":"cluster03_streams"},{"columnName":"cluster04_streams", "alias":"cluster04_streams"},{"columnName":"cluster05_streams", "alias":"cluster05_streams"},{"columnName":"cluster06_streams", "alias":"cluster06_streams"},{"columnName":"cluster07_streams", "alias":"cluster07_streams"},{"columnName":"cluster08_streams", "alias":"cluster08_streams"},{"columnName":"cluster09_streams", "alias":"cluster09_streams"},{"columnName":"cluster10_streams", "alias":"cluster10_streams"},{"columnName":"cluster11_streams", "alias":"cluster11_streams"},{"columnName":"cluster12_streams", "alias":"cluster12_streams"},{"columnName":"cluster13_streams", "alias":"cluster13_streams"},{"columnName":"cluster_unknown_streams", "alias":"cluster_unknown_streams"},{"columnName":"gender_male_streams", "alias":"gender_male_streams"},{"columnName":"gender_female_streams", "alias":"gender_female_streams"},{"columnName":"gender_unknown_streams", "alias":"gender_unknown_streams"},{"columnName":"age_group0to12_streams", "alias":"age_group0to12_streams"},{"columnName":"age_group13to17_streams", "alias":"age_group13to17_streams"},{"columnName":"age_group18to24_streams", "alias":"age_group18to24_streams"},{"columnName":"age_group25to34_streams", "alias":"age_group25to34_streams"},{"columnName":"age_group35to44_streams", "alias":"age_group35to44_streams"},{"columnName":"age_group45to54_streams", "alias":"age_group45to54_streams"},{"columnName":"age_group55to64_streams", "alias":"age_group55to64_streams"},{"columnName":"age_group65_plus_streams", "alias":"age_group65_plus_streams"},{"columnName":"age_group_unknown_streams", "alias":"age_group_unknown_streams"},{"columnName":"source_album_streams", "alias":"source_album_streams"},{"columnName":"source_artist_streams", "alias":"source_artist_streams"},{"columnName":"source_other_streams", "alias":"source_other_streams"},{"columnName":"source_others_playlist_known_streams", "alias":"source_others_playlist_known_streams"},{"columnName":"source_others_playlist_unknown_streams", "alias":"source_others_playlist_unknown_streams"},{"columnName":"source_search_streams", "alias":"source_search_streams"},{"columnName":"source_collection_streams", "alias":"source_collection_streams"},{"columnName":"device_type_desktop_streams", "alias":"device_type_desktop_streams"},{"columnName":"device_type_mobile_streams", "alias":"device_type_mobile_streams"},{"columnName":"device_type_tablet_streams", "alias":"device_type_tablet_streams"},{"columnName":"device_type_other_streams", "alias":"device_type_other_streams"},{"columnName":"u.track_uri", "alias":"track_uri"}]
-    },
-    {
       "dataSetId": "34c20869-9ed8-4df3-9565-2dc90e399fa6",
       "alias": "artists",
       "fields": [
@@ -23,6 +18,33 @@
         {
           "alias": "canopus_id",
           "columnName": "canopus_id"
+        }
+      ]
+    },
+    {
+      "dataSetId": "99ebd0a9-2a89-4487-98b2-a46ecdcb4578",
+      "alias": "artist_details",
+      "fields": [{"columnName":"canopus_id", "alias":"canopus_id"},{"columnName":"territory", "alias":"territory"},{"columnName":"resource_id", "alias":"resource_id"},{"columnName":"report_date", "alias":"report_date"},{"columnName":"resource_rollup_id", "alias":"resource_rollup_id"},{"columnName":"isrc", "alias":"isrc"},{"columnName":"frame_start_timestamp", "alias":"frame_start_timestamp"},{"columnName":"frame_end_timestamp", "alias":"frame_end_timestamp"},{"columnName":"canopus_artist_name", "alias":"canopus_artist_name"},{"columnName":"resource_title", "alias":"resource_title"},{"columnName":"resource_display_title", "alias":"resource_display_title"},{"columnName":"streams_total", "alias":"streams_total"},{"columnName":"streams_free", "alias":"streams_free"},{"columnName":"streams_paid", "alias":"streams_paid"},{"columnName":"streams_total_rank", "alias":"streams_total_rank"},{"columnName":"cluster01_streams", "alias":"cluster01_streams"},{"columnName":"cluster02_streams", "alias":"cluster02_streams"},{"columnName":"cluster03_streams", "alias":"cluster03_streams"},{"columnName":"cluster04_streams", "alias":"cluster04_streams"},{"columnName":"cluster05_streams", "alias":"cluster05_streams"},{"columnName":"cluster06_streams", "alias":"cluster06_streams"},{"columnName":"cluster07_streams", "alias":"cluster07_streams"},{"columnName":"cluster08_streams", "alias":"cluster08_streams"},{"columnName":"cluster09_streams", "alias":"cluster09_streams"},{"columnName":"cluster10_streams", "alias":"cluster10_streams"},{"columnName":"cluster11_streams", "alias":"cluster11_streams"},{"columnName":"cluster12_streams", "alias":"cluster12_streams"},{"columnName":"cluster13_streams", "alias":"cluster13_streams"},{"columnName":"cluster_unknown_streams", "alias":"cluster_unknown_streams"},{"columnName":"gender_male_streams", "alias":"gender_male_streams"},{"columnName":"gender_female_streams", "alias":"gender_female_streams"},{"columnName":"gender_unknown_streams", "alias":"gender_unknown_streams"},{"columnName":"age_group0to12_streams", "alias":"age_group0to12_streams"},{"columnName":"age_group13to17_streams", "alias":"age_group13to17_streams"},{"columnName":"age_group18to24_streams", "alias":"age_group18to24_streams"},{"columnName":"age_group25to34_streams", "alias":"age_group25to34_streams"},{"columnName":"age_group35to44_streams", "alias":"age_group35to44_streams"},{"columnName":"age_group45to54_streams", "alias":"age_group45to54_streams"},{"columnName":"age_group55to64_streams", "alias":"age_group55to64_streams"},{"columnName":"age_group65_plus_streams", "alias":"age_group65_plus_streams"},{"columnName":"age_group_unknown_streams", "alias":"age_group_unknown_streams"},{"columnName":"source_album_streams", "alias":"source_album_streams"},{"columnName":"source_artist_streams", "alias":"source_artist_streams"},{"columnName":"source_other_streams", "alias":"source_other_streams"},{"columnName":"source_others_playlist_known_streams", "alias":"source_others_playlist_known_streams"},{"columnName":"source_others_playlist_unknown_streams", "alias":"source_others_playlist_unknown_streams"},{"columnName":"source_search_streams", "alias":"source_search_streams"},{"columnName":"source_collection_streams", "alias":"source_collection_streams"},{"columnName":"device_type_desktop_streams", "alias":"device_type_desktop_streams"},{"columnName":"device_type_mobile_streams", "alias":"device_type_mobile_streams"},{"columnName":"device_type_tablet_streams", "alias":"device_type_tablet_streams"},{"columnName":"device_type_other_streams", "alias":"device_type_other_streams"},{"columnName":"u.track_uri", "alias":"track_uri"}]
+    },
+    {
+      "dataSetId": "99ebd0a9-2a89-4487-98b2-a46ecdcb4578",
+      "alias": "tracks",
+      "fields": [
+        {
+          "columnName": "canopus_id",
+          "alias": "canopus_id"
+        },
+        {
+          "columnName": "canopus_artist_name",
+          "alias": "canopus_artist_name"
+        },
+        {
+          "columnName": "resource_title",
+          "alias": "resource_title"
+        },
+        {
+          "columnName": "u.track_uri",
+          "alias": "track_uri"
         }
       ]
     }
