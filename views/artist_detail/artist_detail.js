@@ -45,7 +45,7 @@
 					return {
 						name: item.canopus_artist_name,
 						territory: item.territory,
-						free_paid_pie: {
+						type_metrics: {
 							labels: ["Paid","Free"],
 							data: [item.streams_paid,item.streams_free],
 							streams_free: item.streams_free,
@@ -53,6 +53,8 @@
 							streams_total: item.streams_total
 						},
 						source_metrics: {
+							labels: ["Collection","Other","Playlist","Undeveloped Playlist","Album","Artist","Search"],
+							data: [item.source_collection_streams,item.source_other_streams,item.source_others_playlist_known_streams,item.source_others_playlist_unknown_streams,item.source_album_streams,item.source_artist_streams,item.source_search_streams],
 							streams_collection: item.source_collection_streams,
 							streams_other: item.source_other_streams,
 							streams_playlist: item.source_others_playlist_known_streams,
@@ -62,6 +64,8 @@
 							streams_search: item.source_search_streams
 						},
 						gender_metrics: {
+							labels: ["Male","Female","Unknown"],
+							data: [item.gender_male_streams,item.gender_female_streams,item.gender_unknown_streams],
 							streams_male: item.gender_male_streams,
 							streams_female: item.gender_female_streams,
 							streams_unknown: item.gender_unknown_streams
@@ -71,6 +75,8 @@
 							lean_back: item.source_other_streams + item.source_others_playlist_known_streams
 						},
 						age_metrics: {
+							labels: ["12 and Under","13 to 17","18 to 24","25 to 34","35 to 44","45 to 54","55 to 64","65 and up", "Unknown"],
+							data: [item.age_group0to12_streams,item.age_group13to17_streams,item.age_group18to24_streams,item.age_group25to34_streams,item.age_group35to44_streams,item.age_group45to54_streams,item.age_group55to64_streams,item.age_group65_plus_streams,item.age_group_unknown_streams],
 							streams_0to12: item.age_group0to12_streams,
 							streams_13to17: item.age_group13to17_streams,
 							streams_18to24: item.age_group18to24_streams,
@@ -97,6 +103,8 @@
 							cluster13_streams: item.cluster13_streams
 						},
 						platform_metrics: {
+							labels: ["Desktop","Mobile","Tablet","Other"],
+							data: [item.device_type_desktop_streams,item.device_type_mobile_streams,item.device_type_tablet_streams,item.device_type_other_streams],
 							streams_desktop: item.device_type_desktop_streams,
 							streams_mobile: item.device_type_mobile_streams,
 							streams_tablet: item.device_type_tablet_streams,

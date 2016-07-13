@@ -24,13 +24,13 @@
 
 	<div class = "container">
 		<div class = "col-md-4">
-			<canvas id="pie" class="chart chart-pie" chart-data="adc.details[adc.selected_territory][0].free_paid_pie.data" chart-labels="adc.details[adc.selected_territory][0].free_paid_pie.labels" chart-options="options"></canvas>
+			<canvas id="pie" class="chart chart-pie" chart-data="adc.details[adc.selected_territory][0].type_metrics.data" chart-labels="adc.details[adc.selected_territory][0].type_metrics.labels" chart-options="options"></canvas>
 		</div>
 		<div class = "col-md-4">
-		Graph 2
+			<canvas id="pie" class="chart chart-pie" chart-data="adc.details[adc.selected_territory][0].source_metrics.data" chart-labels="adc.details[adc.selected_territory][0].source_metrics.labels" chart-options="options"></canvas>
 		</div>
 		<div class = "col-md-4">
-		Graph 3
+			<canvas id="pie" class="chart chart-pie" chart-data="adc.details[adc.selected_territory][0].age_metrics.data" chart-labels="adc.details[adc.selected_territory][0].age_metrics.labels" chart-options="options"></canvas>
 		</div>
 
 		<div class="code">adc.details[adc.selected_territory][0]<pre>{{adc.details[adc.selected_territory][0] | json}}</pre></div>
