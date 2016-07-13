@@ -17,10 +17,13 @@
 
 		adc.selected_territory = 'XX';
 
+		adc.selected_time = 'Last 30 Days'
+
 		$scope.$on('ArtistDetailData:details ready', function(e) {
 			$scope.$apply(function() {
 				adc.details = ArtistDetailData[$stateParams.artist_id];
 				adc.territories = _.keys(ArtistDetailData[$stateParams.artist_id]).sort();
+				adc.time = ['Last 30 Days', 'Last 7 Days', 'Last 1 Day']
 			});
 			console.log('alemania!', adc.details);
 		});

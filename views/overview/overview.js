@@ -11,7 +11,7 @@
 		var oc = this;
 
 		oc.tiles = _.range(25);
-		oc.images = ['https://i.scdn.co/image/dceb3cf4abf28d0ab0075b5daffa3f82e51fa7a3', 'https://i.scdn.co/image/7697a9c59c2c0fb8256c6320643188e654b042df', 'https://i.scdn.co/image/42b18b812b426f0685c90140f0cfc2e859964199'];
+		oc.images = ['https://i.scdn.co/image/2f66abbf986dcc2fb1dca9bceb892123d5d10c3a', 'https://i.scdn.co/image/663f92496739278bf8b050cf8f76a6f4e7fc8581', 'https://i.scdn.co/image/6e04fd4fcc5b107f93dc1860941dc240e79e1295','https://i.scdn.co/image/28967fae3eaf33b0570b53cf621390204bf050d4','https://i.scdn.co/image/3866d7443de4c47b47367d45973afb20e78df161','https://i.scdn.co/image/671fb0a2ecb0c77cb693eb150bde7b6fa94b3f32'];
 	}
 
 	app
