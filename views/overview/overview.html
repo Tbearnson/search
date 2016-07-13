@@ -1,0 +1,5 @@
+<div class="text-center main-content">
+	<div class="tile"ng-repeat="i in oc.tiles track by $index">
+		<img class="album-cover" ng-src="{{oc.images[$index % 3]}}">
+	</div>
+</div>

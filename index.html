@@ -6,8 +6,10 @@
 
   	<!-- CUSTOM STYLESHEETS -->
     <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="views/search/search.css" />
+    <link rel="stylesheet" href="directives/search/search.css" />
+    <link rel="stylesheet" href="views/overview/overview.css" />
     <link rel="stylesheet" href="views/artist_detail/artist_detail.css" />
+    <link rel="stylesheet" href="directives/domoDropdown/domoDropdown.css" />
 
     <!-- VENDOR SCRIPTS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
@@ -18,11 +20,14 @@
 
     <!-- CUSTOM SCRIPTS -->
     <script src="app.js"></script>
-    <script src="views/search/search.js"></script>
+    <script src="directives/search/search.js"></script>
+    <script src="views/overview/overview.js"></script>
     <script src="views/artist_detail/artist_detail.js"></script>
+    <script src="directives/domoDropdown/domoDropdown.js"></script>
   </head>
   
   <body ng-app="swift">
+    <swift-search></swift-search>
   	<ui-view></ui-view>
   </body>
 </html>

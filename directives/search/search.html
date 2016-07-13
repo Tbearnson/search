@@ -3,7 +3,7 @@
 		<i class="fa fa-search" aria-hidden="true"></i>
 	</div>
 
-	<input type="text" class="main-search-input" placeholder="Search..." ng-model="sc.search_text" ng-change="sc.getSearchResults()">
+	<input type="text" class="main-search-input" placeholder="Search..." ng-model="sc.search_text" ng-change="sc.getSwiftSearchResults()">
 
 	<div class="main-search-icon clear">
 		<i class="fa fa-times-circle" aria-hidden="true" ng-click="sc.search_text = ''"></i>
@@ -15,7 +15,7 @@
 		<h2>Artists</h2>
 		<div class="results">
 			<div class="result" ng-repeat="artist in sc.artists" ng-click="sc.goToDetail(artist)">
-				<h3><a href="">{{artist}}</a></h3>
+				<h3><a href="">{{artist.artist_name}}</a></h3>
 			</div>
 			<div class="loader" ng-if="sc.loading.artists"></div>
 		</div>
@@ -39,11 +39,5 @@
 			</div> -->
 			<div class="loader" ng-if="sc.loading.songs"></div>
 		</div>
-	</div>
-</div>
-
-<div class="text-center main-content">
-	<div class="tile"ng-repeat="i in sc.tiles track by $index">
-		<img class="album-cover" ng-src="{{sc.images[$index % 3]}}">
 	</div>
 </div>

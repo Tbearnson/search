@@ -1,0 +1,84 @@
+domo-dropdown {
+  float:left;
+  display:block;
+  position:relative;
+  width:300px;
+  height:28px;
+  margin:10px 25px 40px
+}
+domo-dropdown p.domo-dropdown-header {
+  margin-bottom:10px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:rgba(0,0,0,.8)
+}
+domo-dropdown .domo-dropdown-display {
+  position:relative;
+  height:30px;
+  width:100%;
+  border-radius:3px;
+  background-color:#e6e7e8
+}
+domo-dropdown .domo-dropdown-display:hover {
+  cursor:pointer;
+  background-color:#d6d7d8
+}
+domo-dropdown .domo-dropdown-display span {
+  position:absolute;
+  max-width:250px;
+  top:7px;
+  left:15px;
+  font-size:10px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
+}
+domo-dropdown .domo-dropdown-display span.placeholder {
+  color:rgba(0,0,0,.5)
+}
+domo-dropdown .domo-dropdown-display i {
+  position:absolute;
+  top:8px;
+  left:275px
+} 
+domo-dropdown .domo-dropdown-list-container {
+  position:absolute;
+  top:60px;
+  left:0;
+  max-height:0;
+  width:100%;
+  font-size:10px;
+  display:none
+}
+domo-dropdown .domo-dropdown-list-container.show {
+  max-height:300px;
+  display:block;
+  overflow-y:auto;
+  overflow-x:hidden;
+  border:1px solid rgba(0,0,0,.2);
+  border-radius:3px;
+  box-shadow:rgba(84,88,90,.2) 0 0 0 3px;
+  z-index:100
+}
+domo-dropdown .domo-dropdown-list {
+  width:inherit;
+  border-radius:3px;
+  background-color:#fff
+}
+domo-dropdown ul {
+  margin:0;
+  padding:0
+}
+domo-dropdown li {
+  padding:7px 20px 7px 10px;
+  cursor:pointer;
+  line-height:18px;
+  min-height:18px
+}
+domo-dropdown li.selected {
+  background-color:#f2f2f3;
+}
+domo-dropdown li.selected:hover,domo-dropdown li:hover {
+  background-color:#c6e1f4;
+}

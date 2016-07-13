@@ -1,3 +1,15 @@
+/* TEMP FOR CONVENIENCE */
+div.code {
+  width: 90%;
+  height: 50%;
+  overflow-y: scroll;
+}
+
+/* ADDED THIS ONE FOR THE LOOK OF THE DROPDOWN */
+.dropdown-bar-adjust {
+  margin-left: -15vw;
+}
+
 .img-circle {
 	border-radius: 50%;
 	float: left;
