@@ -108,3 +108,8 @@
 .song-result h5 {
 	margin-left: 23px;
 }
+
+.no-results {
+	margin-top: 50px;
+	margin-left: 23px;
+}

@@ -18,6 +18,7 @@
 				<h3><a href="">{{artist.artist_name}}</a></h3>
 			</div>
 			<div class="loader" ng-if="sc.loading.artists"></div>
+			<h4 class="no-results" ng-if="!sc.loading.artists && sc.artists.length === 0">(No results found)</h4>
 		</div>
 	</div>
 
@@ -39,6 +40,7 @@
 				<h5>by {{song.canopus_artist_name}}</h5>
 			</div>
 			<div class="loader" ng-if="sc.loading.songs"></div>
+			<h4 class="no-results" ng-if="!sc.loading.songs && sc.songs.length === 0">(No results found)</h4>
 		</div>
 	</div>
 </div>
