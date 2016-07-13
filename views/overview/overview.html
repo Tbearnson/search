@@ -1,9 +1,5 @@
 <div class="text-center main-content">
-<<<<<<< HEAD
 	<div class="tile" ng-repeat="i in oc.tiles | limitTo:15 track by $index" ng-mouseenter="oc.hovered_tile = $index" ng-mouseleave="oc.hovered_tile = undefined" ng-class="{'zoom': oc.hovered_tile === $index}">
-=======
-	<div class="tile" ng-repeat="i in oc.tiles | limitTo:12 track by $index" ng-mouseenter="oc.hovered_tile = $index" ng-mouseleave="oc.hovered_tile = undefined" ng-class="{'zoom': oc.hovered_tile === $index}">
->>>>>>> 21622d81849bdf3c38c094a4a8e0970d4735f8e6
 		<img class="album-cover" ng-src="{{oc.images[$index % 6]}}">
 	</div>
 </div>

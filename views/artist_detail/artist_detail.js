@@ -26,11 +26,9 @@
 				adc.time = ['Last 30 Days', 'Last 7 Days', 'Last 1 Day']
 				adc.name = $stateParams.artist_name
 			});
-			console.log('alemania!', adc.details);
 		});
 
 		// Send out for artist details data on controller initialization
-		console.log($stateParams.artist_id);
 		ArtistDetailData.getArtistDetailData($stateParams.artist_id);
 	}
 	function ArtistDetailData($rootScope, _, domo) {
@@ -114,7 +112,6 @@
 				}), 'territory');
 				// .map(function(item){return item[0];});
 				TheArtistDetailData[canopus_id] = result;
-				console.log('came back', TheArtistDetailData);
 				$rootScope.$broadcast('ArtistDetailData:details ready');
 			});
 		}
