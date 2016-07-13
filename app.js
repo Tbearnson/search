@@ -9,4 +9,4 @@
 	.constant('_', _)
 	.constant('domo', domo)
 	;
-})(angular.module('swift',['ui.router','ui.bootstrap']));
+})(angular.module('swift',['ui.router','ui.bootstrap','chart.js']));

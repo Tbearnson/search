@@ -24,6 +24,7 @@
 				adc.details = ArtistDetailData[$stateParams.artist_id];
 				adc.territories = _.keys(ArtistDetailData[$stateParams.artist_id]).sort();
 				adc.time = ['Last 30 Days', 'Last 7 Days', 'Last 1 Day']
+				adc.name = $stateParams.artist_name
 			});
 			console.log('alemania!', adc.details);
 		});
@@ -38,12 +39,15 @@
 		TheArtistDetailData.getArtistDetailData = function(canopus_id) {
 			if (TheArtistDetailData[canopus_id]) return TheArtistDetailData[canopus_id];
 
-			domo.get('/data/v1/artist_details?filter=canopus_id in ['+canopus_id+']&groupby=territory')
+			domo.get('/data/v1/artist_details?filter=canopus_id in ['+canopus_id+']&groupby=territory&max=canopus_artist_name')
 			.then(function(detail_data){
 				var result = _.groupBy(detail_data.map(function(item){
 					return {
+						name: item.canopus_artist_name,
 						territory: item.territory,
-						period_metrics: {
+						free_paid_pie: {
+							labels: ["Paid","Free"],
+							data: [item.streams_paid,item.streams_free],
 							streams_free: item.streams_free,
 							streams_paid: item.streams_paid,
 							streams_total: item.streams_total

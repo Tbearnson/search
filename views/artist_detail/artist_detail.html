@@ -4,34 +4,36 @@
 		<h1>Artist Name</h1>
 	</div>
  -->
-<div id="bg">
-	<div id="search-container">
-		<div id="search-bg"></div>
-		<div id="search">
-			<img class="img-circle" src = "https://i.scdn.co/image/32e13d2c37af4817d1cbf09742c1f51a328820c7"><h1 class="artist">Artist Name</h1>
+<div class="main-content">
+	<div id="bg">
+		<div id="search-container">
+			<div id="search-bg"></div>
+			<div id="search">
+				<img class="img-circle" src = "https://i.scdn.co/image/32e13d2c37af4817d1cbf09742c1f51a328820c7"><h1 class="artist">{{adc.name}}</h1>
+			</div>
 		</div>
 	</div>
-</div>
 
 
-<div class="btn-group" uib-dropdown is-open="status.isopen">
-	<domo-dropdown class="dropdown-bar-adjust" header="Territory" placeholder="Territory" list="adc.territories" selected="adc.selected_territory"></domo-dropdown>
-	<domo-dropdown class="dropdown-bar-adjust" header="Time Period" placeholder="Time Period" list="adc.time" selected="adc.selected_time"></domo-dropdown>
-</div>
-
-
-
-<div class = "container">
-	<div class = "col-md-4">
-	Graph 1
-	</div>
-	<div class = "col-md-4">
-	Graph 2
-	</div>
-	<div class = "col-md-4">
-	Graph 3
+	<div class="btn-group" uib-dropdown is-open="status.isopen">
+		<domo-dropdown class="dropdown-bar-adjust" header="Territory" placeholder="Territory" list="adc.territories" selected="adc.selected_territory"></domo-dropdown>
+		<domo-dropdown class="dropdown-bar-adjust" header="Time Period" placeholder="Time Period" list="adc.time" selected="adc.selected_time"></domo-dropdown>
 	</div>
 
-	<div class="code">adc.details[adc.selected_territory][0]<pre>{{adc.details[adc.selected_territory][0] | json}}</pre></div>
 
+
+	<div class = "container">
+		<div class = "col-md-4">
+			<canvas id="pie" class="chart chart-pie" chart-data="adc.details[adc.selected_territory][0].free_paid_pie.data" chart-labels="adc.details[adc.selected_territory][0].free_paid_pie.labels" chart-options="options"></canvas>
+		</div>
+		<div class = "col-md-4">
+		Graph 2
+		</div>
+		<div class = "col-md-4">
+		Graph 3
+		</div>
+
+		<div class="code">adc.details[adc.selected_territory][0]<pre>{{adc.details[adc.selected_territory][0] | json}}</pre></div>
+
+	</div>
 </div>
