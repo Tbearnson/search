@@ -7,6 +7,14 @@ div.code {
 
 /* ADDED THIS ONE FOR THE LOOK OF THE DROPDOWN */
 
+.panel-heading{
+  color:rgba(0,0,0,.5) !important;
+}
+
+.overview{
+  height: 225px;
+}
+
 .img-circle {
 	border-radius: 50%;
 	float: left;
