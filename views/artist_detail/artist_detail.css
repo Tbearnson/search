@@ -11,8 +11,12 @@ div.code {
   color:rgba(0,0,0,.5) !important;
 }
 
+hr{
+margin-top: 0px !important;
+}
+
 .overview{
-  height: 150px;
+  /*height: 125px;*/
 }
 
 .img-circle {

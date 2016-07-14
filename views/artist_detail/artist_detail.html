@@ -27,7 +27,15 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"> Overview Metrics for Period </div>
 				<div class="panel-body overview">
-				Total Streams: {{adc.details[adc.selected_territory][0].streams_total}}
+					<div class="col-md-4">
+						Total Streams: {{adc.details[adc.selected_territory][0].type_metrics.streams_total}}
+					</div>
+					<div class="col-md-4">
+						Total Streams: {{adc.details[adc.selected_territory][0].type_metrics.streams_total}}
+					</div>
+					<div class="col-md-4">
+						Total Streams: {{adc.details[adc.selected_territory][0].type_metrics.streams_total}}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -37,7 +45,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"> Overview Metrics for Period </div>
 				<div class="panel-body">
-					<canvas id="pie" class="chart chart-pie" chart-data="adc.details[adc.selected_territory][0].type_metrics.data" chart-labels="adc.details[adc.selected_territory][0].type_metrics.labels" chart-options="options"></canvas>
+					<canvas ng-if="adc.details[adc.selected_territory]" id="pie" class="chart chart-pie" chart-data="adc.details[adc.selected_territory][0].type_metrics.data" chart-labels="adc.details[adc.selected_territory][0].type_metrics.labels" chart-options="options"></canvas>
 				</div>
 			</div>
 		</div>
@@ -45,7 +53,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"> Source of Streams</div>
 				<div class="panel-body">
-					<canvas id="base" class="chart-horizontal-bar" chart-data="adc.details[adc.selected_territory][0].source_metrics.data" chart-labels="adc.details[adc.selected_territory][0].source_metrics.labels" ></canvas> 
+					<canvas id="HorizontalBar" class="chart chart-horizontalBar" chart-data="data" chart-labels="labels" chart-series="series"></canvas> 
 				</div>
 			</div>
 		</div>
@@ -53,13 +61,13 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"> Gender </div>
 				<div class="panel-body">
-					<canvas id="doughnut" class="chart chart-doughnut" chart-data="adc.details[adc.selected_territory][0].gender_metrics.data" chart-labels="adc.details[adc.selected_territory][0].gender_metrics.labels" chart-options="options"></canvas>
+					<canvas ng-if="adc.details[adc.selected_territory]" id="doughnut" class="chart chart-doughnut" chart-data="adc.details[adc.selected_territory][0].gender_metrics.data" chart-labels="adc.details[adc.selected_territory][0].gender_metrics.labels" chart-options="options"></canvas>
 				</div>
 			</div>	
 		</div>
 		
 
-		<div class="code"><pre>{{adc.details[adc.selected_territory][0] | json}}</pre></div>
+		<div class="code"><pre>{{adc.details[adc.selected_territory][0]| json}} </pre><pre>{{adc.spotify | json}}</pre></div>
 
 	</div>
 </div>

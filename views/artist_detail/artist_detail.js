@@ -12,8 +12,16 @@
 		});
 	}
 
-	function ArtistDetailController($scope, $state, $stateParams, _, ArtistDetailData) {
+	function ArtistDetailController($scope, $state, $stateParams, _, ArtistDetailData, SpotifyArtistData) {
 		var adc = this;
+
+	    $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+	    $scope.series = ['Series A', 'Series B'];
+
+	    $scope.data = [
+	      [65, 59, 80, 81, 56, 55, 40],
+	      [28, 48, 40, 19, 86, 27, 90]
+	    ];
 
 		adc.selected_territory = 'XX';
 
@@ -23,11 +31,17 @@
 			$scope.$apply(function() {
 				adc.details = ArtistDetailData[$stateParams.artist_id];
 				adc.territories = _.keys(ArtistDetailData[$stateParams.artist_id]).sort();
-				adc.time = ['Last 30 Days', 'Last 7 Days', 'Last 1 Day']
-				adc.name = $stateParams.artist_name
-				SpotifyArtistData.getSpotifyArtistData(ArtistDetailData.spotify_uri);
+				adc.time = ['Last 30 Days', 'Last 7 Days', 'Last 1 Day'];
+				adc.name = $stateParams.artist_name;
+
+				SpotifyArtistData.getSpotifyArtistData(ArtistDetailData[$stateParams.artist_id][adc.selected_territory][0].spotify_uri)
+				
 			});
 		});
+
+		$scope.$on('SpotifyArtistData:ready', function(e,uri){
+				adc.spotify = SpotifyArtistData[uri]
+		})
 
 		// Send out for artist details data on controller initialization
 		ArtistDetailData.getArtistDetailData($stateParams.artist_id);
@@ -37,14 +51,17 @@
 		var TheArtistDetailData = {};
 
 		TheArtistDetailData.getArtistDetailData = function(canopus_id) {
-			if (TheArtistDetailData[canopus_id]) return TheArtistDetailData[canopus_id];
+			if (TheArtistDetailData[canopus_id]){
+				$rootScope.$broadcast('ArtistDetailData:details ready')
+				return TheArtistDetailData[canopus_id];
+			} 
 
-			domo.get('/data/v1/artist_details?filter=canopus_id in ['+canopus_id+']&groupby=territory&max=canopus_artist_name')
+			domo.get('/data/v1/artist_details2?filter=canopus_id in ['+canopus_id+']&groupby=territory&max=canopus_artist_name,primary_artist_uri')
 			.then(function(detail_data){
 				var result = _.groupBy(detail_data.map(function(item){
 					return {
 						name: item.canopus_artist_name,
-						spotify_uri: '0OdUWJ0sBjDrqHygGUXeCF',//item.primary_artist_uri,
+						spotify_uri: item.primary_artist_uri,
 						territory: item.territory,
 						type_metrics: {
 							labels: ["Paid","Free"],
@@ -124,21 +141,27 @@
 		return TheArtistDetailData;
 	}
 	
-	function SpotifyArtistData($https) {
+	function SpotifyArtistData($rootScope, $http) {
 		var SpotifyArtistData = {};
 
   		SpotifyArtistData.getSpotifyArtistData = function(uri_id) {
+  			if(SpotifyArtistData[uri_id]){
+  				$rootScope.$broadcast('SpotifyArtistData:ready',uri_id);
+  				return SpotifyArtistData[uri_id];	
+  			} 
 
   			$http({
 				method: 'GET',
 				url: 'https://api.spotify.com/v1/artists/' + uri_id
-			}).then(function successCallback(response) {
-			console.log(response)
-  			}, function errorCallback(response) {
+			})
+			.then(function successCallback(response) {
+				console.log(response)
+				SpotifyArtistData[uri_id] = response.data
+				$rootScope.$broadcast('SpotifyArtistData:ready',uri_id);
+  			})
+  			.catch(function errorCallback(response) {
   			console.log("Error getting Spotify data")
   			});
-
-			return response.data
 
   		}
 
@@ -148,8 +171,8 @@
 
 	app
 	.config(['$stateProvider', ArtistDetailConfig])
-	.controller('ArtistDetailController', ['$scope', '$state', '$stateParams', '_', 'ArtistDetailData', ArtistDetailController])
+	.controller('ArtistDetailController', ['$scope', '$state', '$stateParams', '_', 'ArtistDetailData', 'SpotifyArtistData', ArtistDetailController])
 	.factory('ArtistDetailData', ['$rootScope', '_', 'domo', ArtistDetailData])
-	.factory('SpotifyArtistData',SpotifyArtistData)
+	.factory('SpotifyArtistData',['$rootScope','$http', SpotifyArtistData])
 	;
 })(angular.module('swift'));
