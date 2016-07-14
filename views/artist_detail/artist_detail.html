@@ -22,11 +22,12 @@
 
 	<hr>
 
-	<div class = "container overview">
+	<div class = "container">
 		<div class = "col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading"> Overview Metrics for Period </div>
-				<div class="panel-body">
+				<div class="panel-body overview">
+				Total Streams: {{adc.details[adc.selected_territory][0].streams_total}}
 				</div>
 			</div>
 		</div>
@@ -44,7 +45,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"> Source of Streams</div>
 				<div class="panel-body">
-					<canvas id="pie" class="chart chart-pie" chart-data="adc.details[adc.selected_territory][0].source_metrics.data" chart-labels="adc.details[adc.selected_territory][0].source_metrics.labels" chart-options="options"></canvas>
+					<canvas id="base" class="chart-horizontal-bar" chart-data="adc.details[adc.selected_territory][0].source_metrics.data" chart-labels="adc.details[adc.selected_territory][0].source_metrics.labels" ></canvas> 
 				</div>
 			</div>
 		</div>
@@ -52,7 +53,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"> Gender </div>
 				<div class="panel-body">
-					<canvas id="pie" class="chart chart-pie" chart-data="adc.details[adc.selected_territory][0].gender_metrics.data" chart-labels="adc.details[adc.selected_territory][0].gender_metrics.labels" chart-options="options"></canvas>
+					<canvas id="doughnut" class="chart chart-doughnut" chart-data="adc.details[adc.selected_territory][0].gender_metrics.data" chart-labels="adc.details[adc.selected_territory][0].gender_metrics.labels" chart-options="options"></canvas>
 				</div>
 			</div>	
 		</div>

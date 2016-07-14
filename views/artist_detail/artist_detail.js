@@ -25,12 +25,14 @@
 				adc.territories = _.keys(ArtistDetailData[$stateParams.artist_id]).sort();
 				adc.time = ['Last 30 Days', 'Last 7 Days', 'Last 1 Day']
 				adc.name = $stateParams.artist_name
+				SpotifyArtistData.getSpotifyArtistData(ArtistDetailData.spotify_uri);
 			});
 		});
 
 		// Send out for artist details data on controller initialization
 		ArtistDetailData.getArtistDetailData($stateParams.artist_id);
 	}
+	
 	function ArtistDetailData($rootScope, _, domo) {
 		var TheArtistDetailData = {};
 
@@ -42,6 +44,7 @@
 				var result = _.groupBy(detail_data.map(function(item){
 					return {
 						name: item.canopus_artist_name,
+						spotify_uri: '0OdUWJ0sBjDrqHygGUXeCF',//item.primary_artist_uri,
 						territory: item.territory,
 						type_metrics: {
 							labels: ["Paid","Free"],
@@ -53,6 +56,7 @@
 						source_metrics: {
 							labels: ["Collection","Other","Playlist","Undeveloped Playlist","Album","Artist","Search"],
 							data: [item.source_collection_streams,item.source_other_streams,item.source_others_playlist_known_streams,item.source_others_playlist_unknown_streams,item.source_album_streams,item.source_artist_streams,item.source_search_streams],
+							series: ['# of Streams'],
 							streams_collection: item.source_collection_streams,
 							streams_other: item.source_other_streams,
 							streams_playlist: item.source_others_playlist_known_streams,
@@ -119,10 +123,33 @@
 		
 		return TheArtistDetailData;
 	}
+	
+	function SpotifyArtistData($https) {
+		var SpotifyArtistData = {};
+
+  		SpotifyArtistData.getSpotifyArtistData = function(uri_id) {
+
+  			$http({
+				method: 'GET',
+				url: 'https://api.spotify.com/v1/artists/' + uri_id
+			}).then(function successCallback(response) {
+			console.log(response)
+  			}, function errorCallback(response) {
+  			console.log("Error getting Spotify data")
+  			});
+
+			return response.data
+
+  		}
+
+
+		return SpotifyArtistData;
+	}
 
 	app
 	.config(['$stateProvider', ArtistDetailConfig])
 	.controller('ArtistDetailController', ['$scope', '$state', '$stateParams', '_', 'ArtistDetailData', ArtistDetailController])
 	.factory('ArtistDetailData', ['$rootScope', '_', 'domo', ArtistDetailData])
+	.factory('SpotifyArtistData',SpotifyArtistData)
 	;
 })(angular.module('swift'));
