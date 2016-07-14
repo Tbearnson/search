@@ -6,7 +6,7 @@
 	<input type="text" class="main-search-input" placeholder="Search..." ng-model="sc.search_text" ng-change="sc.getSwiftSearchResults()">
 
 	<div class="main-search-icon clear">
-		<i class="fa fa-times-circle" aria-hidden="true" ng-click="sc.search_text = ''"></i>
+		<i class="fa fa-times-circle" aria-hidden="true" ng-click="sc.search_text = ''" ui-sref="overview"></i>
 	</div>
 </div>
 
@@ -16,6 +16,7 @@
 		<div class="results">
 			<div class="result" ng-repeat="artist in sc.artists" ng-click="sc.goToDetail(artist)">
 				<h3><a href="">{{artist.artist_name}}</a></h3>
+				<h3>{{artist.canopus_id}}</h3>
 			</div>
 			<div class="loader" ng-if="sc.loading.artists"></div>
 			<h4 class="no-results" ng-if="!sc.loading.artists && sc.artists.length === 0">(No results found)</h4>
@@ -37,6 +38,7 @@
 		<div class="results">
 			<div class="result song-result" ng-repeat="song in sc.songs">
 				<h3>"{{song.resource_title}}"</h3>
+				<h3>"{{song.canopus_id}}"</h3>
 				<h5>by {{song.canopus_artist_name}}</h5>
 			</div>
 			<div class="loader" ng-if="sc.loading.songs"></div>
