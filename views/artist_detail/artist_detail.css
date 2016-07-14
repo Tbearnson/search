@@ -11,12 +11,20 @@ div.code {
   color:rgba(0,0,0,.5) !important;
 }
 
+.stat{
+  color: rgba(151,187,205,1)
+}
+.stat-label{
+  color:rgba(0,0,0,.5) !important;
+}
+
 hr{
 margin-top: 0px !important;
 }
 
 .overview{
   /*height: 125px;*/
+  text-align: center;
 }
 
 .img-circle {

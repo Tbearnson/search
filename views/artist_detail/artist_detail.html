@@ -9,7 +9,7 @@
 		<div id="search-container">
 			<div id="search-bg"></div>
 			<div id="search">
-				<img class="img-circle" src = "https://i.scdn.co/image/32e13d2c37af4817d1cbf09742c1f51a328820c7"><h1 class="artist">{{adc.name}}</h1>
+				<img class="img-circle" ng-src ={{adc.spotify.images[2].url}}><h1 class="artist">{{adc.name}}</h1>
 			</div>
 		</div>
 	</div>
@@ -27,14 +27,14 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"> Overview Metrics for Period </div>
 				<div class="panel-body overview">
-					<div class="col-md-4">
-						Total Streams: {{adc.details[adc.selected_territory][0].type_metrics.streams_total}}
+					<div class="col-md-4 stat-label">
+						Total Streams: <span class="stat">{{adc.details[adc.selected_territory][0].type_metrics.streams_total}}</span>
 					</div>
-					<div class="col-md-4">
-						Total Streams: {{adc.details[adc.selected_territory][0].type_metrics.streams_total}}
+					<div class="col-md-4 stat-label">
+						Popularity: <span class="stat">{{adc.spotify.popularity}}</span>
 					</div>
-					<div class="col-md-4">
-						Total Streams: {{adc.details[adc.selected_territory][0].type_metrics.streams_total}}
+					<div class="col-md-4 stat-label">
+						Total Followers: <span class="stat">{{adc.spotify.followers.total}}</span>
 					</div>
 				</div>
 			</div>
@@ -53,7 +53,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading"> Source of Streams</div>
 				<div class="panel-body">
-					<canvas id="HorizontalBar" class="chart chart-horizontalBar" chart-data="data" chart-labels="labels" chart-series="series"></canvas> 
+					<canvas id="HorizontalBar" class="chart chart-horizontalBar" chart-data="adc.details[adc.selected_territory][0].source_metrics.data" chart-labels="adc.details[adc.selected_territory][0].type_metrics.labels" chart-series="adc.details[adc.selected_territory][0].source_metrics.series"></canvas> 
 				</div>
 			</div>
 		</div>
