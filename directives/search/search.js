@@ -21,11 +21,11 @@
 		
 		$scope.$on('SwiftSearchData:artists ready', function(e, artists) {
 			sc.loading.artists = false;
-			$scope.$apply(function(){sc.artists = SwiftSearchData.getSwiftArtistResults(sc.search_text); console.log('sc.artists update', sc.artists);});
+			$scope.$apply(function(){sc.artists = SwiftSearchData.getSwiftArtistResults(sc.search_text);});
 		});
 		$scope.$on('SwiftSearchData:tracks ready', function(e, songs) {
 			sc.loading.songs = false;
-			$scope.$apply(function(){sc.songs = SwiftSearchData.getSwiftTrackResults(sc.search_text); console.log('sc.songs update', sc.songs);});
+			$scope.$apply(function(){sc.songs = SwiftSearchData.getSwiftTrackResults(sc.search_text);});
 		});
 		sc.getSwiftSearchResults = function() {
 			if (sc.search_text) sc.artists = SwiftSearchData.getSwiftArtistResults(sc.search_text);

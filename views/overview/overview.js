@@ -53,7 +53,7 @@
 				});
 
 				TheOverviewData.top_artists = result;
-				console.log('top_artists', result);
+				// console.log('top_artists', result);
 				$rootScope.$broadcast('OverviewData:top artists ready', result);
 			});
 		});
