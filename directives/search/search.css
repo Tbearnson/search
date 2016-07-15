@@ -94,8 +94,8 @@
 	border-radius: 2px;
 }
 .result {
-	height: 100px;
-    padding: 10px;
+	/*height: 100px;*/
+    padding: 5px;
     width: 100%;
     overflow-x: hidden;
     display: inline-block;

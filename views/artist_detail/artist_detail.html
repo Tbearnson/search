@@ -28,13 +28,13 @@
 				<div class="panel-heading"> Overview Metrics for Period </div>
 				<div class="panel-body overview">
 					<div class="col-md-4 stat-label">
-						Total Streams: <span class="stat">{{adc.details[adc.selected_territory][0].type_metrics.streams_total}}</span>
+						Total Streams: <span class="stat">{{adc.details[adc.selected_territory][0].type_metrics.streams_total| number:0}}</span>
 					</div>
 					<div class="col-md-4 stat-label">
-						Popularity: <span class="stat">{{adc.spotify.popularity}}</span>
+						Popularity: <span class="stat">{{adc.spotify.popularity| number:0}}</span>
 					</div>
 					<div class="col-md-4 stat-label">
-						Total Followers: <span class="stat">{{adc.spotify.followers.total}}</span>
+						Total Followers: <span class="stat">{{adc.spotify.followers.total| number:0}}</span>
 					</div>
 				</div>
 			</div>

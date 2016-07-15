@@ -68,7 +68,7 @@
 				return TheArtistDetailData[canopus_id];
 			} 
 
-			domo.get('/data/v1/artist_details2?filter=canopus_id in ['+canopus_id+']&groupby=territory&max=canopus_artist_name,primary_artist_uri')
+			domo.get('/data/v1/artist_details?filter=canopus_id in ['+canopus_id+']&groupby=territory&max=canopus_artist_name,primary_artist_uri')
 			.then(function(detail_data){
 				var result = _.groupBy(detail_data.map(function(item){
 					return {
