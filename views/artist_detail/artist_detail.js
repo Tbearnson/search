@@ -38,6 +38,18 @@
 				
 			});
 		});
+	
+
+		$scope.$on('ArtistDetailData:cache ready', function(e) {
+			
+				adc.details = ArtistDetailData[$stateParams.artist_id];
+				adc.territories = _.keys(ArtistDetailData[$stateParams.artist_id]).sort();
+				adc.time = ['Last 30 Days', 'Last 7 Days', 'Last 1 Day'];
+				adc.name = $stateParams.artist_name;
+
+				SpotifyArtistData.getSpotifyArtistData(ArtistDetailData[$stateParams.artist_id][adc.selected_territory][0].spotify_uri)
+
+		});
 
 		$scope.$on('SpotifyArtistData:ready', function(e,uri){
 				adc.spotify = SpotifyArtistData[uri]
@@ -52,7 +64,7 @@
 
 		TheArtistDetailData.getArtistDetailData = function(canopus_id) {
 			if (TheArtistDetailData[canopus_id]){
-				$rootScope.$broadcast('ArtistDetailData:details ready')
+				$rootScope.$broadcast('ArtistDetailData:cache ready')
 				return TheArtistDetailData[canopus_id];
 			} 
 
