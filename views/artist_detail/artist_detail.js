@@ -141,38 +141,11 @@
 		return TheArtistDetailData;
 	}
 	
-	function SpotifyArtistData($rootScope, $http) {
-		var SpotifyArtistData = {};
-
-  		SpotifyArtistData.getSpotifyArtistData = function(uri_id) {
-  			if(SpotifyArtistData[uri_id]){
-  				$rootScope.$broadcast('SpotifyArtistData:ready',uri_id);
-  				return SpotifyArtistData[uri_id];	
-  			} 
-
-  			$http({
-				method: 'GET',
-				url: 'https://api.spotify.com/v1/artists/' + uri_id
-			})
-			.then(function successCallback(response) {
-				console.log(response)
-				SpotifyArtistData[uri_id] = response.data
-				$rootScope.$broadcast('SpotifyArtistData:ready',uri_id);
-  			})
-  			.catch(function errorCallback(response) {
-  			console.log("Error getting Spotify data")
-  			});
-
-  		}
-
-
-		return SpotifyArtistData;
-	}
+	
 
 	app
 	.config(['$stateProvider', ArtistDetailConfig])
 	.controller('ArtistDetailController', ['$scope', '$state', '$stateParams', '_', 'ArtistDetailData', 'SpotifyArtistData', ArtistDetailController])
 	.factory('ArtistDetailData', ['$rootScope', '_', 'domo', ArtistDetailData])
-	.factory('SpotifyArtistData',['$rootScope','$http', SpotifyArtistData])
 	;
 })(angular.module('swift'));

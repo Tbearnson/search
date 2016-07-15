@@ -1,5 +1,13 @@
 <div class="text-center main-content">
-	<div class="tile" ng-repeat="i in oc.tiles | limitTo:15 track by $index" ng-mouseenter="oc.hovered_tile = $index" ng-mouseleave="oc.hovered_tile = undefined" ng-class="{'zoom': oc.hovered_tile === $index}">
-		<img class="album-cover" ng-src="{{oc.images[$index % 6]}}">
+	<div class="tile" ng-repeat="artist in oc.top_artists | limitTo:15 track by $index" ng-mouseenter="oc.hovered_tile = $index" ng-mouseleave="oc.hovered_tile = undefined" ng-class="{'zoom': oc.hovered_tile === $index}" ng-click="oc.goToDetail(artist)">
+		<img class="album-cover" ng-src="{{artist.spotify_data.images[0].url}}">
+		<div class="album-overlay" ng-class="{show: oc.hovered_tile === $index}">
+			<div class="artist-meta">
+				<h3>{{artist.artist_name}}</h3>
+				<div class="metric-label">Total Streams:</div><div class="metric-value"> {{artist.streams_total | number:0}}</div>
+				<div class="metric-label">Spotify Popularity:</div><div class="metric-value"> {{artist.spotify_data.popularity | number:0}}</div>
+				<div class="metric-label">Spotify Followers:</div><div class="metric-value"> {{artist.spotify_data.followers.total | number:0}}</div>
+			</div>
+		</div>
 	</div>
 </div>

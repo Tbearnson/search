@@ -4,6 +4,7 @@
 	overflow-y: scroll;
 }
 .tile {
+	position: relative;
 	display: inline-block;
 
 	margin-top: 20px;
@@ -24,7 +25,52 @@
 	transition: transform .5s ease;
 	transform: scale(1.1,1.1);
 }
+
 .album-cover {
 	width: 100%;
 	height: 100%;
+}
+.album-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+
+	-webkit-transition: background-color .5s ease;
+	transition: background-color .5s ease;
+	background-color: rgba(0,0,0,0);
+}
+.album-overlay.show {
+	-webkit-transition: background-color .5s ease;
+	transition: background-color .5s ease;
+	background-color: rgba(0,0,0,.75);
+}
+.artist-meta {
+	-webkit-transition: opacity .5s ease;
+	transition: opacity .5s ease;
+	opacity: 0;
+	margin-top: 20px;
+	color: #ddd;
+}
+.artist-meta h3 {
+	text-decoration: underline;
+}
+.artist-meta .metric-label {
+	text-align: left;
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-left: 25px;
+	margin-top: .2em;
+}
+.artist-meta .metric-value {
+	text-align: left;
+	font-size: 1em;
+	margin-left: 50px;
+}
+.show .artist-meta {
+	-webkit-transition: opacity .5s ease;
+	transition: opacity .5s ease;
+	opacity: 1;
 }
