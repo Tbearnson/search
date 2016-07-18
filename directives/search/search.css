@@ -94,19 +94,68 @@
 	border-radius: 2px;
 }
 .result {
-	/*height: 100px;*/
+	position: relative;
+
+	height: 75px;
     padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 2px;
     width: 100%;
     overflow-x: hidden;
     display: inline-block;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    background-color: #333;
 }
-.result a {
+.result .picture-placeholder {
+	height: 65px;
+	width: 65px;
+	border-radius: 50%;
+
+	top: 5px;
+	left: 5px;
+
+	background-color: #555;
+	margin-right: 0;
+}
+
+.top-result-main, .top-result-sub {
+	position: absolute;
+	margin-left: 80px;
+}
+.top-result-main {
+	top: 5px;
+	margin-top: 5px;
+}
+.top-result-main a {
+	font-size: .9em;
+	font-weight: 500;
 	color: #fff;
 }
-.song-result h5 {
-	margin-left: 23px;
+.top-result-sub {
+	top: 40px;
+	margin-top: 5px;
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #999;
+}
+.song-result-main {
+	margin-top: 5px;
+}
+.song-result-main, .song-result-sub {
+	margin-left: 5px;
+}
+.song-result-main a {
+	font-size: .9em;
+	font-weight: 500;
+	color: #fff;
+}
+.song-result-sub {
+	margin-top: 5px;
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #999;
 }
 
 .no-results {

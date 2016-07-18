@@ -72,7 +72,7 @@
 		}
 		publicAPI.getSwiftTrackResults = function(query_string) {
 			if (query_string && TheSwiftSearchData.tracks) return _.sortBy(TheSwiftSearchData.tracks.filter(function(item) {
-				return item.canopus_artist_name.toLowerCase().indexOf(query_string.toLowerCase()) > -1;
+				return item.resource_title.toLowerCase().indexOf(query_string.toLowerCase()) > -1;
 			}), function(item){return item.resource_title.toLowerCase().indexOf(query_string.toLowerCase());}).slice(0,25);
 
 			else if (TheSwiftSearchData.tracks) return TheSwiftSearchData.tracks.sort().slice(0,25);

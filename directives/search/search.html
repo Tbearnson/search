@@ -12,10 +12,12 @@
 
 <div class="main-search-overlay" ng-class="{show: sc.search_text.length > 0}" stop-propagation>
 	<div class="result-section result-1" ng-class="{show: sc.search_text.length > 0}">
-		<h2>Artists</h2>
+		<h2>Top Results</h2>
 		<div class="results">
 			<div class="result" ng-repeat="artist in sc.artists" ng-click="sc.goToDetail(artist)">
-				<h3><a href="">{{artist.artist_name}}</a></h3>
+				<div class="picture-placeholder"></div>
+				<h3 class="top-result-main"><a href="">{{artist.artist_name}}</a></h3>
+				<h3 class="top-result-sub">Artist</h3>
 			</div>
 			<div class="loader" ng-if="sc.loading.artists"></div>
 			<h4 class="no-results" ng-if="!sc.loading.artists && sc.artists.length === 0">(No results found)</h4>
@@ -36,8 +38,8 @@
 		<h2>Songs</h2>
 		<div class="results">
 			<div class="result song-result" ng-repeat="song in sc.songs">
-				<h3>"{{song.resource_title}}"</h3>
-				<h5>by {{song.canopus_artist_name}}</h5>
+				<h3 class="song-result-main"><a href="">{{song.resource_title}}</a></h3>
+				<h3 class="song-result-sub">{{song.canopus_artist_name}}</h3>
 			</div>
 			<div class="loader" ng-if="sc.loading.songs"></div>
 			<h4 class="no-results" ng-if="!sc.loading.songs && sc.songs.length === 0">(No results found)</h4>
